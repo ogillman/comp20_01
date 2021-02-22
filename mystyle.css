@@ -6,7 +6,6 @@ ul {
   list-style-type: none;
   overflow: hidden;
   background-color: #333;
-  margin: 0px;
   font-size: 18px;
   font-family: Helvetica, Arial;
 }
@@ -35,7 +34,7 @@ h1 {
   font-size: 50px;
   color: #059e4d;
   text-align: center;
-  padding: 50px 0px 0px 0px;
+  padding: 50px 0px 50px 0px;
   font-family: Georgia, Times New Roman; 
 }
 
@@ -44,12 +43,10 @@ footer {
   background-color: #333;
   font-size: 18px;
   font-family: Helvetica, Arial;
-  position: absolute;
+  position: fixed;
   right: 0;
   bottom: 0;
   left: 0;
-  margin:5px;
-  width: 100%;
 }
 
 
