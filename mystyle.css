@@ -6,7 +6,7 @@ body {
 ul {
   list-style-type: none;
   overflow: hidden;
-  background-color: #333;
+  background-color: ##75473d;
   font-size: 18px;
   font-family: Helvetica, Arial;
 }
@@ -41,7 +41,7 @@ h1 {
 
 footer {
   text-align: center;
-  background-color: #333;
+  background-color: ##75473d;
   font-size: 18px;
   font-family: Helvetica, Arial;
   position: fixed;
