@@ -6,7 +6,7 @@ body {
 ul {
   list-style-type: none;
   overflow: hidden;
-  background-color: #75473d;
+  background-color: #444;
   font-size: 18px;
   font-family: Helvetica, Arial;
 }
@@ -17,7 +17,7 @@ li {
 
 li a {
   display: block;
-  color: #fff;
+  color: #444;
   text-align: center;
   padding: 30px 30px 30px 30px;
   text-decoration: none;
@@ -33,7 +33,7 @@ li a:hover:not(.active) {
 
 h1 {
   font-size: 50px;
-  color: #059e4d;
+  color: #fff;
   text-align: center;
   padding: 50px 0px 50px 0px;
   font-family: Georgia, Times New Roman; 
@@ -41,7 +41,7 @@ h1 {
 
 footer {
   text-align: center;
-  background-color: #75473d;
+  background-color: #444;
   font-size: 18px;
   font-family: Helvetica, Arial;
   position: fixed;
