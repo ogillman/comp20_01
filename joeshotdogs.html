@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+  <head> 
+    <title>Joe's Hotdog Stand</title>
+    <style type="text/css">
+      body {
+        background-color: #FEFAFA;
+      }
+      h1 {
+        color: #C90A0A;
+      }
+      p {
+        font-size: 24px;
+        color: #643700;
+      } 
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to Joe's Hotdog Stand!</h1>
+    <p><br /><strong>Your Order: </strong><br /></p>
+    <script language="javascript">
+      var total, discount=0, tax;
+      var drink, fry, dog;
+      
+      dog = prompt("How many hotdogs ($3.25 each) would you like?");
+      fry = prompt("How many french fries ($2.00 each) would you like?");
+      drink = prompt("How many drinks ($1.50 each) would you like?");
+      document.write("Hotdogs: " + dog);
+      document.write("<br />French Fries: " + fry);
+      document.write("<br />Drinks: " + drink);
+      total = 3.25*dog + 2*fry + 1.5*drink;
+      
+      document.write("<br /><br />Subtotal: $" + total.toFixed(2));
+      if (total >= 20) {
+        discount = total*.1;
+        document.write("<br />Discount: $" + discount.toFixed(2));
+      }
+      
+      total -= discount;
+      tax = total*.0625;
+      document.write("<br />Tax: $" + tax.toFixed(2));
+      total += tax;
+      document.write("<br />Total: $" + total.toFixed(2));
+    </script>
+    
+    <p style="color:#038900"><br /><strong>Thank You!</strong><br /></p>
+  </body>
+</html>
