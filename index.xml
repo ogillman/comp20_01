@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href = "setstyle.css" ?>
+<Setlist>
+  <Heading>2021 Setlist</Heading>
+  <Record>
+    <Artist>Glass Animals</Artist>
+    <Title>Heat Waves</Title>
+    <Genre>Indie</Genre>
+    <Year>2020</Year>
+  </Record>
+  <Record>
+    <Artist>Cage the Elephant</Artist>
+    <Title>Cigarette Daydreams</Title>
+    <Genre>Alternative</Genre>
+    <Year>2013</Year>
+  </Record>
+  <Record>
+    <Artist>Llusion, Cautious Clay, HXNS</Artist>
+    <Title>Sad4good</Title>
+    <Genre>Dance</Genre>
+    <Year>2020</Year>
+  </Record>
+  <Record>
+    <Artist>Glass Animals</Artist>
+    <Title>Poplar St</Title>
+    <Genre>Indie</Genre>
+    <Year>2016</Year>
+  </Record>
+  <Record>
+    <Artist>Glass Animals</Artist>
+    <Title>Tangerine</Title>
+    <Genre>Indie</Genre>
+    <Year>2020</Year>
+  </Record>
+  <Record>
+    <Artist>Cage the Elephant</Artist>
+    <Title>Social Cues</Title>
+    <Genre>Alternative</Genre>
+    <Year>2019</Year>
+  </Record>
+  <Record>
+    <Artist>Cage the Elephant</Artist>
+    <Title>Ain't No Rest for the Wicked</Title>
+    <Genre>Rock</Genre>
+    <Year>2008</Year>
+  </Record>
+  <Record>
+    <Artist>Elephant Castle</Artist>
+    <Title>Cool To Be Unhappy</Title>
+    <Genre>Alternative</Genre>
+    <Year>2020</Year>
+  </Record>
+  <Record>
+    <Artist>Samia</Artist>
+    <Title>Ode to Artifice</Title>
+    <Genre>Alternative</Genre>
+    <Year>2019</Year>
+  </Record>
+  <Record>
+    <Artist>Glass Animals</Artist>
+    <Title>Season 2 Episode 3</Title>
+    <Genre>Indie</Genre>
+    <Year>2016</Year>
+  </Record>
+</Setlist>
