@@ -1,0 +1,34 @@
+Setlist {
+  background-color: #FFE6DA;
+  font-family: Helvetica;
+  text-align: center;
+}
+
+Record {
+  margin: 20px;
+}
+
+Heading {
+  font-size: 40px;
+  color: #000;
+  display: block;
+
+}
+
+Artist {
+  font-size: 24px;
+  color: #000;
+  display: block;
+}
+
+Title {
+  font-size: 20px;
+  color: #000;
+  display: block;
+}
+
+Genre, Year {
+  font-size: 18px;
+  color: #F50041;
+  display: block;
+}
