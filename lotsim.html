@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html>
+  <head> 
+  <title>Lottery Simulator</title>
+  <style type="text/css">
+      body {
+        background-color: #F1F4EC;
+        text-align: center;
+      }
+      h1 {
+        color: #00B302;
+      }
+  </style>
+  </head>
+  <body>
+    <h1>Play the Mass Lottery "Lucky for Life" game!</h1>
+    <script language="javascript">
+      
+      var input = prompt("Enter your 5 lottery numbers, 1-48: ");
+      var inputs = input.split(" ");
+      inputs.sort(function(a, b){return a-b});
+      var luckyInput = prompt("Enter your lucky ball, 1-18: ");
+      
+      var winning = [Math.floor(Math.random()*47)+1, 
+                     Math.floor(Math.random()*47)+1,
+                     Math.floor(Math.random()*47)+1,
+                     Math.floor(Math.random()*47)+1,
+                     Math.floor(Math.random()*47)+1];
+      winning.sort(function(a, b){return a-b});
+      var luckyWin = Math.floor(Math.random()*17)+1;
+      
+      document.write("Your picks:<br />");
+      for (i=0; i<5; i++) {
+        document.write(inputs[i]+" ");
+      }
+      document.write(luckyInput + "<br />");
+      
+      document.write("<br />Winning numbers:<br />")
+      for (i=0; i<5; i++) {
+        document.write(winning[i]+" ");
+      }
+      document.write(luckyWin + "<br />");
+      
+      var matches = 0;
+      var inputRight = ["open", "open", "open", "open", "open"];
+      for (i=0; i<5; i++) { //winning
+        for (j=0; j<5; j++) { //input
+          if ((winning[i] == inputs[j]) && (inputRight[j] == "open") ) {
+            matches++;
+            inputRight[j] = "used";
+            break;
+          }
+        }
+      }
+      document.write("<br />Numbers that match: " + matches);
+      
+      var luckyMatch = 0;
+      if (luckyInput == luckyWin) luckyMatch = 1;
+      document.write("<br />Lucky ball match? "+ (luckyMatch==1 ? "Yes":"No"));
+      document.write("<br /><br />");
+                      
+      if (matches==5 && luckyMatch==1) {
+        document.write("<strong>$7000 a WEEK for LIFE</strong>");
+      } else if (matches==5) {
+        document.write("<strong>$25000 a YEAR for LIFE</strong>");
+      } else if (matches==4 && luckyMatch==1) {
+        document.write("<strong>$5000</strong>");
+      } else if (matches==4) {
+        document.write("<strong>$200</strong>");
+      } else if (matches==3 && luckyMatch==1) {
+        document.write("<strong>$150</strong>");
+      } else if (matches==3) {
+        document.write("<strong>$20</strong>");
+      } else if (matches==2 && luckyMatch==1) {
+        document.write("<strong>$25</strong>");
+      } else if (matches==2) {
+        document.write("<strong>$3</strong>");
+      } else if (matches==1 && luckyMatch==1) {
+        document.write("<strong>$6</strong>");
+      } else if (matches==0 && luckyMatch==1) {
+        document.write("<strong>$4</strong>");
+      } else {
+        document.write("<strong>$0... better luck next time</strong>");
+      }
+
+      
+    </script>
+  </body>
+</html>
