@@ -17,24 +17,24 @@
     <h1>Play the Mass Lottery "Lucky for Life" game!</h1>
     <script language="javascript">
       
-      var input = prompt("Enter your 5 lottery numbers, 1-48: ");
-      var inputs = input.split(" ");
-      inputs.sort(function(a, b){return a-b});
-      var luckyInput = prompt("Enter your lucky ball, 1-18: ");
-      
-      var winning = [Math.floor(Math.random()*47)+1, 
-                     Math.floor(Math.random()*47)+1,
-                     Math.floor(Math.random()*47)+1,
-                     Math.floor(Math.random()*47)+1,
-                     Math.floor(Math.random()*47)+1];
+      var win = prompt("Enter the winning 5 lottery numbers, 1-48: ");
+      var winning = win.split(" ");
       winning.sort(function(a, b){return a-b});
-      var luckyWin = Math.floor(Math.random()*17)+1;
+      var luckyWin = prompt("Enter the winning lucky ball, 1-18: ");
       
-      document.write("Your picks:<br />");
+      var picks = [Math.floor(Math.random()*47)+1, 
+                   Math.floor(Math.random()*47)+1,
+                   Math.floor(Math.random()*47)+1,
+                   Math.floor(Math.random()*47)+1,
+                   Math.floor(Math.random()*47)+1];
+      picks.sort(function(a, b){return a-b});
+      var luckyPick = Math.floor(Math.random()*17)+1;
+      
+      document.write("Computer picks:<br />");
       for (i=0; i<5; i++) {
-        document.write(inputs[i]+" ");
+        document.write(picks[i]+" ");
       }
-      document.write(luckyInput + "<br />");
+      document.write(luckyPick + "<br />");
       
       document.write("<br />Winning numbers:<br />")
       for (i=0; i<5; i++) {
@@ -43,12 +43,12 @@
       document.write(luckyWin + "<br />");
       
       var matches = 0;
-      var inputRight = ["open", "open", "open", "open", "open"];
+      var picksRight = ["open", "open", "open", "open", "open"];
       for (i=0; i<5; i++) { //winning
-        for (j=0; j<5; j++) { //input
-          if ((winning[i] == inputs[j]) && (inputRight[j] == "open") ) {
+        for (j=0; j<5; j++) { //picks
+          if ((winning[i] == picks[j]) && (picksRight[j] == "open") ) {
             matches++;
-            inputRight[j] = "used";
+            picksRight[j] = "used";
             break;
           }
         }
@@ -56,7 +56,7 @@
       document.write("<br />Numbers that match: " + matches);
       
       var luckyMatch = 0;
-      if (luckyInput == luckyWin) luckyMatch = 1;
+      if (luckyPick == luckyWin) luckyMatch = 1;
       document.write("<br />Lucky ball match? "+ (luckyMatch==1 ? "Yes":"No"));
       document.write("<br /><br />");
                       
