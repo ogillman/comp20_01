@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html>
+  <head> 
+  <title>Amicable Numbers</title>
+  <style type="text/css">
+      body {
+        background-color: #F3FAFF;
+      }
+      h1 {
+        color: #0057D9;
+      }
+  </style>
+  </head>
+  <body>
+    <h1>Amicable Numbers</h1>
+    <form>
+      <label for="num1">First number:</label><br>
+      <input type="text" id="num1"><br>
+      <label for="num2">Second number:</label><br>
+      <input type="text" id="num2"><br><br>
+      <input type="button" value="Get Amicability" onclick="main()">
+    </form> 
+    
+    <div id="amicable"></div>
+    
+    <script language="javascript">
+      function main()
+      {
+        var num1, num2, factors1, factors2;
+        num1 = parseInt(document.getElementById("num1").value);
+        num2 = parseInt(document.getElementById("num2").value);
+        factors1 = getFactors(num1);
+        factors2 = getFactors(num2);
+        sendOutput(num1, num2, factors1, factors2);
+      }
+      
+      function getFactors(num)
+      {
+        var factors = [];
+        for (i = 1; i < num; i++) {
+          if ((num % i) == 0) factors.push(i);
+        }
+        
+        return factors;
+      }
+      
+      function checkAmicable(num1, fac2)
+      {
+        var amicable = 0;
+        sum = 0;
+        for(i = 0; i < fac2.length; i++) {
+          sum += fac2[i];
+        }
+        if (sum == num1) amicable = 1;
+        return amicable;
+      }
+      
+      function sendOutput(num1, num2, fac1, fac2)
+      {
+        var text, factorText, amicable = 0;
+        if (checkAmicable(num1, fac2) && checkAmicable(num2, fac1)) {
+          amicable = 1;
+        }
+        text = "<br />The numbers: " + num1 + " and " + num2 + " are " +
+               (amicable==0 ? "not ":"") + "amicable";
+        document.getElementById("amicable").innerHTML = text;
+        
+        factorText = num1 + " factors: ";
+        for (i = 0; i < fac1.length; i++) {
+            factorText += fac1[i] + " ";
+        }
+        factorText += "\n" + num2 + " factors: ";
+        for (i = 0; i < fac2.length; i++) {
+            factorText += fac2[i] + " ";
+        }
+        alert(factorText);
+      }
+      
+    </script>
+    
+    
+  </body>
+</html>
