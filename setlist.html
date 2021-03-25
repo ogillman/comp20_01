@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Setlist</title>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script language="javascript" src="setlist.json"></script>
+</head>
+
+<body>
+	<script language="javascript">
+	   $.getJSON("setlist.json", function(data){
+		   str = JSON.stringify(data);
+			 document.write(str +"<br/>");
+     });
+  </script>
+</body>
+</html>
