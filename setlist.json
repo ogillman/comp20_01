@@ -1,62 +1,62 @@
 [
 	{
 	"song": "Heat Waves",
-	"artist": ["Glass Animals"],
+	"artist": "Glass Animals",
 	"genre": ["Indie"],
 	"year": 2020
 },
 {
 "song": "Cigarette Daydreams",
-"artist": ["Cage the Elephant"],
+"artist": "Cage the Elephant",
 "genre": ["Alternative"],
 "year": 2013
 },
 {
 "song": "Sad4good",
-"artist": ["Llusion", "Cautious Clay", "HXNS"],
+"artist": "Llusion, Cautious Clay & HXNS",
 "genre": ["Dance"],
 "year": 2020
 },
 {
 "song": "Poplar St",
-"artist": ["Glass Animals"],
+"artist": "Glass Animals",
 "genre": ["Indie", "Alternative"],
 "year": 2016
 },
 {
 "song": "Tangerine",
-"artist": ["Glass Animals"],
+"artist": "Glass Animals",
 "genre": ["Indie"],
 "year": 2020
 },
 {
 "song": "Social Cues",
-"artist": ["Cage the Elephant"],
+"artist": "Cage the Elephant",
 "genre": ["Alternative"],
 "year": 2019
 },
 {
 "song": "Ain't No Rest for the Wicked",
-"artist": ["Cage the Elephant"],
+"artist": "Cage the Elephant",
 "genre": ["Rock"],
 "year": 2008
 },
 {
 "song": "Cool To Be Unhappy",
-"artist": ["Elephant Castle"],
+"artist": "Elephant Castle",
 "genre": ["Alternative"],
 "year": 2020
 },
 {
 "song": "Ode to Artifice",
-"artist": ["Samia"],
-"genre": ["Alternative"],
+"artist": "Samia",
+"genre": "Alternative",
 "year": 2019
 },
 {
 "song": "Season 2 Episode 3",
-"artist": ["Glass Animals"],
-"genre": ["Indie"]
+"artist": "Glass Animals",
+"genre": ["Indie"],
 "year": 2016
 }
 	]
