@@ -4,15 +4,79 @@
   <meta charset="utf-8">
   <title>Setlist</title>
   <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script> 
-  <script language="javascript" src="setlist.json"></script>
+  <style>
+    body{
+      background-color: #FFE6DA;
+      font-family: Helvetica;
+    }
+    h1{
+      color: #F50041;
+    }
+    h2{
+      color: #F50041;
+    }
+  </style>
 </head> 
 
 <body>
-	<script language="javascript">
-	   $.getJSON("setlist.json", function(data){
-		   str = JSON.stringify(data);
-			 document.write(str +"<br/>");
-     });
+  <script language="javascript">
+    /* for parts 2 and 3 */
+    $.get("https://ogillman.github.io/comp20_01/setlist.json", function(data){
+    text= "";
+    data.forEach(function(song) {    
+      text += "<br />" + song.song + "<br />" 
+              + "Artist: " + song.artist + "<br />"
+              + "Genre: " + song.genre + "<br />"
+              + "Year: " + song.year + "<br />";
+    });
+    /* part 3, initial display */
+    document.getElementById('setlist').innerHTML = text;
+    /* part 2, stringified data */
+    document.getElementById('stringified').innerHTML = JSON.stringify(data);
+    });
+    
+    function filterGenre(){
+      /* part 4, filter with a form */
+      var val = document.getElementById('filters').value;
+      $.get("https://ogillman.github.io/comp20_01/setlist.json", function(data){
+        text= "";
+        if (val == 'All') {
+          data.forEach(function(song){    
+            text += "<br />" + song.song + "<br />" 
+                    + "Artist: " + song.artist + "<br />"
+                    + "Genre: " + song.genre + "<br />"
+                    + "Year: " + song.year + "<br />";
+          });
+        } else {
+          data.forEach(function(song){ 
+            if (song.genre.indexOf(val) != -1) {    
+              text += "<br />" + song.song + "<br />" 
+                      + "Artist: " + song.artist + "<br />"
+                      + "Genre: " + song.genre + "<br />"
+                      + "Year: " + song.year + "<br />";
+            }
+          });
+        }
+        document.getElementById('setlist').innerHTML = text;
+      });
+    };
   </script>
+  
+  <h1>Setlist!</h1>
+  <h2>JSON, Serialized:</h2>
+  <div id='stringified'></div>
+  <h2>Filtered Data, Displayed:</h2>
+  <div>Choose a genre to filter by!</div>
+    <form>
+      <select id='filters'>
+        <option value="All">All</option>
+        <option value="Indie">Indie</option>
+        <option value="Alternative">Alternative</option>
+        <option value="Rock">Rock</option>
+        <option value="Dance">Dance</option>
+      </select>
+      <input type='button' value='Filter' onclick='filterGenre()'>
+    </form>
+    <div id='setlist'></div>
 </body>
 </html>
