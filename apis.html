@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+	<title>ISS API</title>
+	<meta charset="utf-8"/>
+	<script>
+		function getInfo() {
+			// Step 1: Make instance of request object to make HTTP request after page is loaded
+			request = new XMLHttpRequest();
+ 
+			// Step 2: Set the URL for the AJAX request to be the JSON file
+		  request.open("GET", "https://api.wheretheiss.at/v1/satellites/25544", true)
+			request.onreadystatechange = function() {
+				 
+			if (request.readyState == 4 && request.status == 200) {
+				result = request.responseText;
+				data = JSON.parse(result);
+				text = ""
+        text += "<strong>" + data.name + "</strong><br />" 
+                + "ID: " + data.id + "<br />"
+                + "Latitude: " + data.latitude + "<br />"
+                + "Longitude: " + data.longitude + "<br />"
+                + "Alititude: " + data.altitude + "<br />"
+                + "Velocity: " + data.velocity + "<br />"
+                + "Visibility: " + data.visibility + "<br />"
+                + "Footprint: " + data.footprint + "<br />"
+                + "Timestamp: " + data.timestamp + "<br />"
+                + "Daynum: " + data.daynum + "<br />"
+                + "Solar Latitude: " + data.solar_lat + "<br />"
+                + "Solar Longitude: " + data.solar_lon + "<br />"
+                + "Units: " + data.units + "<br />";
+				document.getElementById("data").innerHTML = text;
+			} else if (request.readyState == 4 && request.status != 200) {
+				document.getElementById("data").innerHTML = "Something is wrong!";
+			} 
+			}
+		// Step 4: fire off the HTTPS request
+			request.send();
+		}
+	</script>
+</head>
+
+<body onload="getInfo()">
+
+	<h1>ISS (Internation Space Station) API</h1>
+	<div id="data">Loading...</div>
+  <h2>More Info</h2>
+  <div>This API, found on https://wheretheiss.at/w/developer, provides
+        documentation on the International Space Station. The site states that 
+        "you can get current, past, or future position of the ISS, get 
+        timezone information about a set of coordinates, and also get TLE data 
+        on the ISS." In my current displayed use of the API, you get the
+        current position of the ISS (note how the daynum updates with each 
+        refresh of the page).<br /><br /></div>
+        
+  <div>request = new XMLHttpRequest()<br />
+  This call makes an instance of a request object to make the HTTPS 
+  request after the page is loaded.<br /><br /></div>
+  
+  <div>request.open("GET", "https://api.wheretheiss.at/v1/satellites/25544", true)<br />
+  This opens the request to get the API data.<br /><br /></div>
+  
+  <div>request.onreadystatechange<br />
+  I use this event handler to signal when the state changes, thus allowing a 
+  continuation of request processing in a function.<br /><br /></div>
+  
+  <div>request.readyState == 4 && request.status == 200<br />
+  These are to validate that the request was properly received and is 
+  correct. They return the state of the request.<br /><br /></div>
+  
+  <div>result = request.responseText<br />
+  This sets result to the JSON returned by the request.<br /><br /></div>
+  
+  <div>request.send()<br />
+  This XMLHttpRequest method sends the request to the server.<br /><br /></div>
+  
+  <div>This API could be useful for space agencies that want to keep track of
+    the International Space Station, as it gives the exact coordinates in
+    lat-, long-, and altitude. However, due to the simple output from
+    requests, I could imagine it as an easy use for amateur space enthusiasts
+    wanting to keep track of the ISS's location.</div>
+  
+</body>
+</html>
