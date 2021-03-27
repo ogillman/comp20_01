@@ -5,10 +5,7 @@
 	<meta charset="utf-8"/>
 	<script>
 		function getInfo() {
-			// Step 1: Make instance of request object to make HTTP request after page is loaded
 			request = new XMLHttpRequest();
- 
-			// Step 2: Set the URL for the AJAX request to be the JSON file
 		  request.open("GET", "https://api.wheretheiss.at/v1/satellites/25544", true)
 			request.onreadystatechange = function() {
 				 
@@ -34,7 +31,6 @@
 				document.getElementById("data").innerHTML = "Something is wrong!";
 			} 
 			}
-		// Step 4: fire off the HTTPS request
 			request.send();
 		}
 	</script>
